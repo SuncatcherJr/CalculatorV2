@@ -1,6 +1,6 @@
 #include "Calc.h"
 
-Calc::Calc() :wxFrame(nullptr, wxID_ANY, "THE CALC... sorry the name isnt loading :/", wxPoint(0, 200), wxSize(400, 550))
+Calc::Calc() :wxFrame(nullptr, wxID_ANY, "THE CALC... sorry the name isn't loading :/", wxPoint(0, 200), wxSize(400, 550))
 {	
 	// Text Box
 	textBox = new wxTextCtrl(this, 1000, "", wxPoint(35, 10), wxSize(300, 300));
@@ -60,7 +60,6 @@ void Calc::ButtonClicked(wxCommandEvent& _event)
 	int sc = _event.GetId();
 	switch(sc)
 	{
-
 	case 1001:
 		textBox->AppendText("0");
 		break;
