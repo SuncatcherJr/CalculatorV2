@@ -1,5 +1,5 @@
 #include "App.h"
-wxIMPLEMENT_APP(App);
+wxIMPLEMENT_APP(App);di
 
 // Con
 App::App()

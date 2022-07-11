@@ -1,32 +1,32 @@
 #include "Calc.h"
 
-Calc::Calc() :wxFrame(nullptr, wxID_ANY, "The Calc", wxPoint(0, 200), wxSize(400, 600))
+Calc::Calc() :wxFrame(nullptr, wxID_ANY, "THE CALC... sorry the name isnt loading :/", wxPoint(0, 200), wxSize(400, 550))
 {	
 	// Text Box
-	textBox = new wxTextCtrl(this, 1000, "", wxPoint(0, 200), wxSize(300, 300));
+	textBox = new wxTextCtrl(this, 1000, "", wxPoint(35, 10), wxSize(300, 300));
 
 	// Button Formatting
 	func = new wxButton * [20];
-	num0 = new wxButton(this, 1001, "0", wxPoint(125, 650), wxSize(50, 50));
-	num1 = new wxButton(this, 1002, "1", wxPoint(75, 600), wxSize(50, 50));
-	num2 = new wxButton(this, 1003, "2", wxPoint(125, 600), wxSize(50, 50));
-	num3 = new wxButton(this, 1004, "3", wxPoint(175, 600), wxSize(50, 50));
-	num4 = new wxButton(this, 1005, "4", wxPoint(75, 550), wxSize(50, 50));
-	num5 = new wxButton(this, 1006, "5", wxPoint(125, 550), wxSize(50, 50));
-	num6 = new wxButton(this, 1007, "6", wxPoint(175, 550), wxSize(50, 50));
-	num7 = new wxButton(this, 1008, "7", wxPoint(75, 500), wxSize(50, 50));
-	num8 = new wxButton(this, 1009, "8", wxPoint(125, 500), wxSize(50, 50));
-	num9 = new wxButton(this, 1010, "9", wxPoint(175, 500), wxSize(50, 50));
-	clear = new wxButton(this, 1011, "Clr", wxPoint(75, 650), wxSize(50, 50));
-	plus = new wxButton(this, 1012, "+", wxPoint(225, 500), wxSize(50, 50));
-	minus = new wxButton(this, 1013, "-", wxPoint(225, 550), wxSize(50, 50));
-	multiply = new wxButton(this, 1014, "*", wxPoint(225, 600), wxSize(50, 50));
-	divide = new wxButton(this, 1015, "/", wxPoint(225, 650), wxSize(50, 50));
-	equal = new wxButton(this, 1016, "=", wxPoint(175, 650), wxSize(50, 50));
-	binary = new wxButton(this, 1017, "Bin", wxPoint(25, 500), wxSize(50, 50));
-	hexidecimal = new wxButton(this, 1018, "Hex", wxPoint(25, 550), wxSize(50, 50));
-	mod = new wxButton(this, 1019, "Mod", wxPoint(25, 600), wxSize(50, 50));
-	decimal = new wxButton(this, 1020, "Dec", wxPoint(25, 650), wxSize(50, 50));
+	num0 = new wxButton(this, 1001, "0", wxPoint(155, 460), wxSize(50, 50));
+	num1 = new wxButton(this, 1002, "1", wxPoint(105, 410), wxSize(50, 50));
+	num2 = new wxButton(this, 1003, "2", wxPoint(155, 410), wxSize(50, 50));
+	num3 = new wxButton(this, 1004, "3", wxPoint(205, 410), wxSize(50, 50));
+	num4 = new wxButton(this, 1005, "4", wxPoint(105, 360), wxSize(50, 50));
+	num5 = new wxButton(this, 1006, "5", wxPoint(155, 360), wxSize(50, 50));
+	num6 = new wxButton(this, 1007, "6", wxPoint(205, 360), wxSize(50, 50));
+	num7 = new wxButton(this, 1008, "7", wxPoint(105, 310), wxSize(50, 50));
+	num8 = new wxButton(this, 1009, "8", wxPoint(155, 310), wxSize(50, 50));
+	num9 = new wxButton(this, 1010, "9", wxPoint(205, 310), wxSize(50, 50));
+	clear = new wxButton(this, 1011, "Clr", wxPoint(105, 460), wxSize(50, 50));
+	plus = new wxButton(this, 1012, "+", wxPoint(255, 310), wxSize(50, 50));
+	minus = new wxButton(this, 1013, "-", wxPoint(255, 360), wxSize(50, 50));
+	multiply = new wxButton(this, 1014, "*", wxPoint(255, 410), wxSize(50, 50));
+	divide = new wxButton(this, 1015, "/", wxPoint(255, 460), wxSize(50, 50));
+	equal = new wxButton(this, 1016, "=", wxPoint(205, 460), wxSize(50, 50));
+	binary = new wxButton(this, 1017, "Bin", wxPoint(55, 310), wxSize(50, 50));
+	hexidecimal = new wxButton(this, 1018, "Hex", wxPoint(55, 360), wxSize(50, 50));
+	mod = new wxButton(this, 1019, "Mod", wxPoint(55, 410), wxSize(50, 50));
+	decimal = new wxButton(this, 1020, "Dec", wxPoint(55, 460), wxSize(50, 50));
 
 	// Function for Buttons
 	func[0] = num0;
