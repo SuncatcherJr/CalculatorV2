@@ -1,4 +1,5 @@
 #include "Calc.h"
+#include "ButtonFactory.h"
 
 Calc::Calc() :wxFrame(nullptr, wxID_ANY, "The Calc", wxPoint(0, 200), wxSize(400, 600))
 {	
@@ -7,7 +8,7 @@ Calc::Calc() :wxFrame(nullptr, wxID_ANY, "The Calc", wxPoint(0, 200), wxSize(400
 
 	// Button Formatting
 	func = new wxButton * [20];
-	num0 = new wxButton(this, 1001, "0", wxPoint(125, 650), wxSize(50, 50));
+	/*num0 = new wxButton(this, 1001, "0", wxPoint(125, 650), wxSize(50, 50));
 	num1 = new wxButton(this, 1002, "1", wxPoint(75, 600), wxSize(50, 50));
 	num2 = new wxButton(this, 1003, "2", wxPoint(125, 600), wxSize(50, 50));
 	num3 = new wxButton(this, 1004, "3", wxPoint(175, 600), wxSize(50, 50));
@@ -26,7 +27,28 @@ Calc::Calc() :wxFrame(nullptr, wxID_ANY, "The Calc", wxPoint(0, 200), wxSize(400
 	binary = new wxButton(this, 1017, "Bin", wxPoint(25, 500), wxSize(50, 50));
 	hexidecimal = new wxButton(this, 1018, "Hex", wxPoint(25, 550), wxSize(50, 50));
 	mod = new wxButton(this, 1019, "Mod", wxPoint(25, 600), wxSize(50, 50));
-	decimal = new wxButton(this, 1020, "Dec", wxPoint(25, 650), wxSize(50, 50));
+	decimal = new wxButton(this, 1020, "Dec", wxPoint(25, 650), wxSize(50, 50));*/
+	num0 = ButtonFactory::buttonCreation1(this);
+	num1 = ButtonFactory::buttonCreation2(this);
+	num2 = ButtonFactory::buttonCreation3(this);
+	num3 = ButtonFactory::buttonCreation4(this);
+	num4 = ButtonFactory::buttonCreation5(this);
+	num5 = ButtonFactory::buttonCreation6(this);
+	num6 = ButtonFactory::buttonCreation7(this);
+	num7 = ButtonFactory::buttonCreation8(this);
+	num8 = ButtonFactory::buttonCreation9(this);
+	num9 = ButtonFactory::buttonCreation10(this);
+	clear = ButtonFactory::buttonCreation11(this);
+	plus = ButtonFactory::buttonCreation12(this);
+	minus = ButtonFactory::buttonCreation13(this);
+	multiply = ButtonFactory::buttonCreation14(this);
+	divide = ButtonFactory::buttonCreation15(this);
+	equal = ButtonFactory::buttonCreation16(this);
+	binary = ButtonFactory::buttonCreation17(this);
+	hexidecimal = ButtonFactory::buttonCreation18(this);
+	mod = ButtonFactory::buttonCreation19(this);
+	decimal = ButtonFactory::buttonCreation20(this);
+
 
 	// Function for Buttons
 	func[0] = num0;
