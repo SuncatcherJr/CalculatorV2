@@ -1,5 +1,6 @@
 #include "Calc.h"
 #include "ButtonFactory.h"
+#include "CalculatorProcessor.h"
 
 Calc::Calc() :wxFrame(nullptr, wxID_ANY, "THE CALC... sorry the name isn't loading :/", wxPoint(0, 200), wxSize(400, 550))
 {	
@@ -8,26 +9,6 @@ Calc::Calc() :wxFrame(nullptr, wxID_ANY, "THE CALC... sorry the name isn't loadi
 
 	// Button Formatting
 	func = new wxButton * [20];
-	/*num0 = new wxButton(this, 1001, "0", wxPoint(125, 650), wxSize(50, 50));
-	num1 = new wxButton(this, 1002, "1", wxPoint(75, 600), wxSize(50, 50));
-	num2 = new wxButton(this, 1003, "2", wxPoint(125, 600), wxSize(50, 50));
-	num3 = new wxButton(this, 1004, "3", wxPoint(175, 600), wxSize(50, 50));
-	num4 = new wxButton(this, 1005, "4", wxPoint(75, 550), wxSize(50, 50));
-	num5 = new wxButton(this, 1006, "5", wxPoint(125, 550), wxSize(50, 50));
-	num6 = new wxButton(this, 1007, "6", wxPoint(175, 550), wxSize(50, 50));
-	num7 = new wxButton(this, 1008, "7", wxPoint(75, 500), wxSize(50, 50));
-	num8 = new wxButton(this, 1009, "8", wxPoint(125, 500), wxSize(50, 50));
-	num9 = new wxButton(this, 1010, "9", wxPoint(175, 500), wxSize(50, 50));
-	clear = new wxButton(this, 1011, "Clr", wxPoint(75, 650), wxSize(50, 50));
-	plus = new wxButton(this, 1012, "+", wxPoint(225, 500), wxSize(50, 50));
-	minus = new wxButton(this, 1013, "-", wxPoint(225, 550), wxSize(50, 50));
-	multiply = new wxButton(this, 1014, "*", wxPoint(225, 600), wxSize(50, 50));
-	divide = new wxButton(this, 1015, "/", wxPoint(225, 650), wxSize(50, 50));
-	equal = new wxButton(this, 1016, "=", wxPoint(175, 650), wxSize(50, 50));
-	binary = new wxButton(this, 1017, "Bin", wxPoint(25, 500), wxSize(50, 50));
-	hexidecimal = new wxButton(this, 1018, "Hex", wxPoint(25, 550), wxSize(50, 50));
-	mod = new wxButton(this, 1019, "Mod", wxPoint(25, 600), wxSize(50, 50));
-	decimal = new wxButton(this, 1020, "Dec", wxPoint(25, 650), wxSize(50, 50));*/
 	num0 = ButtonFactory::buttonCreation1(this);
 	num1 = ButtonFactory::buttonCreation2(this);
 	num2 = ButtonFactory::buttonCreation3(this);
@@ -77,70 +58,205 @@ Calc::Calc() :wxFrame(nullptr, wxID_ANY, "THE CALC... sorry the name isn't loadi
 	}
 }
 
+void Calc::IsSolved()
+{
+	if (solve == true)
+	{
+		n1 = 0;
+		textBox->Clear();
+	}
+	solve = false;
+}
+
 void Calc::ButtonClicked(wxCommandEvent& _event)
 {
+	CalculatorProcessor* process = CalculatorProcessor::getInstance();
+
 	int sc = _event.GetId();
 	switch(sc)
 	{
 	case 1001:
+		IsSolved();
 		textBox->AppendText("0");
+		if (operate == ' ')
+		{
+			n1 = (n1 * 10) + 0;
+		}
+		else
+		{
+			n2 = (n2 * 10) + 0;
+		}
 		break;
 	case 1002:
+		IsSolved();
 		textBox->AppendText("1");
+		if (operate == ' ')
+		{
+			n1 = (n1 * 10) + 1;
+		}
+		else
+		{
+			n2 = (n2 * 10) + 1;
+		}
 		break;
 	case 1003:
+		IsSolved();
 		textBox->AppendText("2");
+		if (operate == ' ')
+		{
+			n1 = (n1 * 10) + 2;
+		}
+		else
+		{
+			n2 = (n2 * 10) + 2;
+		}
 		break;
 	case 1004:
+		IsSolved();
 		textBox->AppendText("3");
+		{
+			if (operate == ' ')
+			{
+				n1 = (n1 * 10) + 3;
+			}
+			else
+			{
+				n2 = (n2 * 10) + 3;
+			}
+		}
 		break;
 	case 1005:
+		IsSolved();
 		textBox->AppendText("4");
+		if (operate == ' ')
+		{
+			n1 = (n1 * 10) + 4;
+		}
+		else
+		{
+			n2 = (n2 * 10) + 4;
+		}
 		break;
 	case 1006:
+		IsSolved();
 		textBox->AppendText("5");
+		if (operate == ' ')
+		{
+			n1 = (n1 * 10) + 5;
+		}
+		else
+		{
+			n2 = (n2 * 10) + 5;
+		}
 		break;
 	case 1007:
+		IsSolved();
 		textBox->AppendText("6");
+		if (operate == ' ')
+		{
+			n1 = (n1 * 10) + 6;
+		}
+		else
+		{
+			n2 = (n2 * 10) + 6;
+		}
 		break;
 	case 1008:
+		IsSolved();
 		textBox->AppendText("7");
+		if (operate == ' ')
+		{
+			n1 = (n1 * 10) + 7;
+		}
+		else
+		{
+			n2 = (n2 * 10) + 7;
+		}
 		break;
 	case 1009:
+		IsSolved();
 		textBox->AppendText("8");
+		if (operate == ' ')
+		{
+			n1 = (n1 * 10) + 8;
+		}
+		else
+		{
+			n2 = (n2 * 10) + 8;
+		}
 		break;
 	case 1010:
+		IsSolved();
 		textBox->AppendText("9");
+		if (operate == ' ')
+		{
+			n1 = (n1 * 10) + 9;
+		}
+		else
+		{
+			n2 = (n2 * 10) + 9;
+		}
 		break;
 	case 1011:
-		textBox->AppendText("Clr");
+		solve = false;
+		textBox->Clear();
+		operate = ' ';
+		n1 = 0;
+		n2 = 0;
 		break;
 	case 1012:
+		solve = false;
 		textBox->AppendText("+");
+		operate = '+';
 		break;
 	case 1013:
+		solve = false;
 		textBox->AppendText("-");
+		operate = '-';
 		break;
 	case 1014:
+		solve = false;
 		textBox->AppendText("*");
+		operate = '*';
 		break;
-	case 1015: 
+	case 1015:
+		solve = false;
 		textBox->AppendText("/");
+		operate = '/';
 		break;
-	case 1016: 
+	case 1016:
 		textBox->AppendText("=");
+		textBox->Clear();
+		result = process->AllFuncSwitch(n1, n2, operate);
+		textBox->AppendText(std::to_string(result));
+		operate = ' ';
+		n1 = result;
+		n2 = 0;
+		solve = true;
 		break;
 	case 1017:
+		solve = false;
 		textBox->AppendText("Bin");
+		textBox->Clear();
+		result2 = process->toBinaryString(result);
+		textBox->AppendText(result2);
 		break;
 	case 1018:
+		solve = false;
 		textBox->AppendText("Hex");
+		textBox->Clear();
+		result2 = process->toHexaDecimalString(result);
+		textBox->AppendText(result2);
 		break;
 	case 1019:
+		solve = false;
 		textBox->AppendText("Mod");
+		operate = '%';
 		break;
 	case 1020:
-		textBox->AppendText("Dec");
+		solve = false;
+		textBox->Clear();
+		textBox->AppendText(std::to_string(n1));
 		break;
 	default:
 		textBox->Clear();

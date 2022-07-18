@@ -3,6 +3,14 @@
 
 class Calc : public wxFrame
 {
+private:
+	float n1 = 0;
+	float n2 = 0;
+	float result = 0;
+	std::string result2 = "";
+	char operate = ' ';
+	bool solve = false;
+
 public:
 
 public:
@@ -37,5 +45,6 @@ public:
 
 	// Button Function
 	void ButtonClicked(wxCommandEvent& _event);
+	void IsSolved();
 };
 
