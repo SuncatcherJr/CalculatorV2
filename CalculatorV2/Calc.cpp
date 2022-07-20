@@ -5,7 +5,7 @@
 Calc::Calc() :wxFrame(nullptr, wxID_ANY, "THE CALC... sorry the name isn't loading :/", wxPoint(0, 200), wxSize(400, 550))
 {	
 	// Text Box
-	textBox = new wxTextCtrl(this, 1000, "", wxPoint(35, 10), wxSize(300, 300));
+	textBox = new wxTextCtrl(this, 1000, "", wxPoint(25, 10), wxSize(250, 275));
 
 	// Button Formatting
 	func = new wxButton * [20];
